@@ -1,0 +1,11 @@
+numpy
+pandas
+matplotlib
+seaborn
+logzero
+jupyter
+scrapy
+requests
+nltk
+cld2-cffi
+wordcloud
