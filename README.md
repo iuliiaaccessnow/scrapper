@@ -1,5 +1,19 @@
 
-# Capgemini Datacamp:
+# Current progress:
+- first in terminal
+```
+pip install -r requirements.txt
+```
+- RestoTAPerso spider can be used to scrapped data for the neighborhoods change url in def start_requests(self) from line 20 to scrape different url
+```
+scrapy crawl RestoTAPerso --overwrite-output=TA_reviews/scrapped_data/scrapped_data.jl
+```
+- Toronto spider let you scrape restaurant names and addresses for the neighborhood, change the url in def start_requests(self) from line 15 to scrape different url. There is a bug - scrapes only one page
+```
+scrapy crawl Toronto --overwrite-output=TA_reviews/scrapped_data/scrapped_data.jl
+```
+
+## Below README is from https://github.com/henrique-britoleao/trip_advisor_scrap 
 
 ## Table of contents
 - [Deliverable 1:](#deliverable-1-)
@@ -32,7 +46,7 @@ To run this project, install it locally:
 
 ```terminal
 pip install -r requirements.txt
-scrapy ReviewRestoTA --overwrite-output=TA_reviews/scrapped_data/scrapped_data.jl
+scrapy crawl [spider-Name] --overwrite-output=TA_reviews/scrapped_data/scrapped_data.jl
 ```
 Data from webscraping will be in ../trip_advisor_scrap/TA_reviews/TA_reviews/scrapped_data.
 

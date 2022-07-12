@@ -21,6 +21,8 @@ class TAResto(scrapy.Item):
     """Used to parse restaurants from Trip Advisor"""
     resto_url = scrapy.Field()
     resto_name = scrapy.Field()
+    resto_address = scrapy.Field()
+    resto_website = scrapy.Field()
     resto_rating = scrapy.Field()
     resto_keys = scrapy.Field()
     resto_details = scrapy.Field()

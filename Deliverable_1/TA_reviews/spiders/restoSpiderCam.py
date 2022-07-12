@@ -19,8 +19,7 @@ class RestoPerso(scrapy.Spider):
 
     def start_requests(self):
         '''Submits first request to Spider to crawl'''
-        url = 'https://www.tripadvisor.co.uk/Restaurants-g191259-Greater' \
-              '_London_England.html'
+        url = 'https://www.tripadvisor.com/Restaurants-g155019-zfg16548-Toronto_Ontario.html'
         
         yield scrapy.Request(url=url, callback=self.parse)
     
@@ -76,6 +75,8 @@ class RestoPerso(scrapy.Spider):
             xpath_name = '//div[@data-test-target="restaurant-detail-info"]/div' \
                          '/h1/text()'
             xpath_rating = '//a[@href="#REVIEWS"]/svg/@title'
+            # use the below code to get a rating, looks like the origin code doesnt work to extract the overall rating of the restaurant
+            # xpath_rating = '//div[@data-tab="TABS_OVERVIEW"]//div[@class="QEQvp"]/span/text()' 
 
             xpath_keys = '//div[@class="_3UjHBXYa"]//div[@class="_14zKtJkz"]/text()'
             xpath_details = '//div[@class="_3UjHBXYa"]//div[@class="_1XLfiSsv"]' \
@@ -166,3 +167,4 @@ class RestoPerso(scrapy.Spider):
             review_item['user_number_likes'] = user_data[1]
         
         yield review_item
+    
