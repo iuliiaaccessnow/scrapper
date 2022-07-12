@@ -119,9 +119,10 @@ class TADataLoader:
         self.df_resto = get_resto_id(self.df_resto, 'resto')
 
         # extract rating
-        self.df_resto['resto_rating'] = self.df_resto['resto_rating'].apply(
-            lambda rating: float(re.findall(r'([0-9]\.[0-9])\s', rating[0])[0])
-        )
+        
+        # self.df_resto['resto_rating'] = self.df_resto['resto_rating'].apply(
+        #     lambda rating: float(re.findall(r'([0-9]\.[0-9])\s', rating[0])[0])
+        # )
         # extract additional information
         self.df_resto = extract_details(self.df_resto)
 
